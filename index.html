@@ -481,6 +481,21 @@
             color: #fff; font-size: 35px; cursor: pointer;
         }
         @media (max-width: 600px) {
+            .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-main);
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
 
     body {
         overflow-x: hidden;
@@ -1345,6 +1360,9 @@
         document.getElementById('wishlistBadge').innerText = wishlist.length;
         function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
+}
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
 }
     </script>
 </body>
