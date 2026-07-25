@@ -482,15 +482,16 @@
         }
         @media (max-width: 600px) {
             .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    background: var(--bg-main);
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
+    margin-top: 15px;
+}
+
+.nav-links.active {
+    display: flex;
 }
 
 .nav-links.active {
@@ -565,20 +566,6 @@
 #mainModal {
     display: none;
 }
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--gold);
-    font-size: 25px;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-}
     </style>
 </head>
 <body>
@@ -594,9 +581,6 @@
             <div class="luxury-logo"><span>SS</span></div>
             <div class="logo-text">SAID STYLE</div>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
-    ☰
-</button>
         
         <ul class="nav-links">
             <li><a class="active" onclick="location.reload()">HOME</a></li>
@@ -1358,12 +1342,6 @@
         // تهيئة العدادات عند التحميل
         document.getElementById('cartBadge').innerText = cart.reduce((sum, i) => sum + i.quantity, 0);
         document.getElementById('wishlistBadge').innerText = wishlist.length;
-        function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
-function toggleMenu() {
-    document.querySelector(".nav-links").classList.toggle("active");
-}
     </script>
 </body>
 </html>
